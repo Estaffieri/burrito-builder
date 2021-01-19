@@ -1,4 +1,13 @@
 export const getOrders = () => {
   return fetch('http://localhost:3001/api/v1/orders')
-      .then(response => response.json())
+      .then(response => {
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw Error
+        }
+      })
+      .catch(error => {
+        return "No orders yet!"
+      })
 }
