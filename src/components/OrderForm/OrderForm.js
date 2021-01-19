@@ -27,7 +27,7 @@ class OrderForm extends Component {
     if (this.state.name && this.state.ingredients.length > 0) {
       this.props.addOrders(this.state.name, this.state.ingredients)
     } else {
-      console.log("Can't")
+      alert("Oops! Please include a name and at least one ingredient!")
     }
     this.clearInputs()
   }
